@@ -13,4 +13,4 @@ class Song(models.Model):
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "%s %s" % (self.title, self.artist)
+        return self.title

@@ -5,6 +5,17 @@
     <title>Add Artist</title>
 </head>
 <body>
-    <h1>Add an Artist</h1>
+    <h1>Artists:</h1><br>
+    <form action="add_artist" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form><br>
+    <h2>List of Artists:</h2>
+    {% if artist_list %}
+        {% for artist in artist_list %}
+            <p>{{ artist.name }}</p>
+        {% endfor %}
+    {% endif %}
 </body>
 </html>
